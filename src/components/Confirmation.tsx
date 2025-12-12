@@ -1,0 +1,148 @@
+import svgPaths from '../imports/svg-23i37qxptk';
+import imgLawyer from 'figma:asset/b98188831a3933f358c227a30dc107a47f833da6.png';
+import ProgressBar from './ProgressBar';
+import Header from './Header';
+
+// Arrow icon for buttons
+function ArrowIcon() {
+  return (
+    <svg className="w-[18px] h-[18px]" fill="none" viewBox="0 0 18 18">
+      <g>
+        <path d={svgPaths.p23f83f00} fill="white" />
+      </g>
+    </svg>
+  );
+}
+
+// Arrow for Continue button
+function ContinueArrow() {
+  return (
+    <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15">
+      <path d={svgPaths.p39cb0dc0} fill="white" />
+    </svg>
+  );
+}
+
+// Success checkmark icon
+function SuccessCheckmark() {
+  return (
+    <div className="w-[78px] h-[78px] animate-[scaleIn_0.6s_ease-out]">
+      <svg className="w-full h-full" fill="none" viewBox="0 0 78 78">
+        <circle cx="39" cy="39" r="39" fill="#1CA099" className="animate-[pulse_2s_ease-in-out_infinite]" />
+        <path 
+          clipRule="evenodd" 
+          d={svgPaths.p33ef9000} 
+          fill="white" 
+          fillRule="evenodd"
+          className="animate-[drawCheck_0.5s_ease-out_0.3s_both]"
+        />
+      </svg>
+    </div>
+  );
+}
+
+type ConfirmationProps = {
+  onContinue?: () => void;
+  onLogoClick?: () => void;
+};
+
+export default function Confirmation({ onContinue, onLogoClick }: ConfirmationProps) {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
+      {/* Header/Navigation */}
+      <Header onLogoClick={onLogoClick} />
+      
+      {/* Progress Bar */}
+      <div className="animate-[fadeIn_0.8s_ease-out_0.2s_both]">
+        <ProgressBar currentStep={8} />
+      </div>
+
+      {/* Main Content */}
+      <main className="w-full max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 py-8 lg:py-12">
+        {/* Success Icon */}
+        <div className="flex justify-center mb-8">
+          <SuccessCheckmark />
+        </div>
+
+        {/* Heading */}
+        <h1 className="font-['Roboto_Serif',serif] font-semibold text-white text-[28px] sm:text-[36px] lg:text-[48px] text-center mb-6 capitalize animate-[fadeInUp_0.8s_ease-out_0.4s_both] px-4">
+          Your Case Has Been Successfully Submitted 🎉
+        </h1>
+
+        {/* Subtitle */}
+        <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[17px] md:text-[18px] text-center mb-8 lg:mb-10 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.6s_both] px-4">
+          Thank you for completing your case submission. Your assigned lawyer will begin reviewing your information shortly.
+        </p>
+
+        {/* Case Summary Card */}
+        <div className="bg-[#d0eae6] rounded-[7px] p-6 max-w-[589px] mx-auto mb-10 lg:mb-12 animate-[fadeInUp_0.8s_ease-out_0.8s_both] hover:shadow-xl transition-shadow">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
+            {/* Lawyer Image */}
+            <div className="w-[60px] h-[60px] shrink-0">
+              <img 
+                src={imgLawyer} 
+                alt="Jonas Smith" 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+
+            {/* Lawyer Info */}
+            <div className="flex-1 min-w-0">
+              <p className="font-['Roboto_Serif',serif] font-medium text-[#264456] text-[18px] mb-2">
+                Jonas Smith
+              </p>
+              <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
+                Divorce Law
+              </p>
+            </div>
+
+            {/* Price - Mobile: Below, Desktop: Right */}
+            <div className="w-full sm:w-auto sm:text-right">
+              <p className="font-['Roboto_Serif',serif] text-[#1d1c22] text-[18px] mb-2">
+                ₹5,000
+              </p>
+              <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
+                Estimate within: 3 weeks
+              </p>
+            </div>
+          </div>
+
+          <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
+            Case urgency: <span className="font-medium text-[#325368]">Urgent</span>
+          </p>
+        </div>
+
+        {/* What Happens Next */}
+        <div className="max-w-[589px] mx-auto mb-8 lg:mb-10 animate-[fadeInUp_0.8s_ease-out_1s_both]">
+          <ol className="space-y-4 text-white font-['Roboto',sans-serif] text-[16px] sm:text-[18px] list-decimal list-inside px-4">
+            <li className="leading-relaxed">
+              We're preparing your draft case file using AI. This usually takes 10-20 seconds.
+            </li>
+            <li className="leading-relaxed">
+              You'll review the draft and confirm the details.
+            </li>
+            <li className="leading-relaxed">
+              Your lawyer will finalize and file your case officially.
+            </li>
+          </ol>
+        </div>
+
+        {/* Generate Draft Button */}
+        <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
+          <button 
+            onClick={onContinue}
+            className="flex items-center gap-2 px-6 py-4 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+          >
+            Generate My Draft Case File
+            <ContinueArrow />
+          </button>
+        </div>
+
+        {/* Security Notice */}
+        <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[18px] text-center max-w-[589px] mx-auto animate-[fadeIn_0.8s_ease-out_1.4s_both] px-4">
+          Your information is secure, encrypted, and only shared with your assigned lawyer.
+        </p>
+      </main>
+    </div>
+  );
+}
