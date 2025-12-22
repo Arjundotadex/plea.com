@@ -108,6 +108,20 @@ export default function App() {
     navigateToPage('home');
   };
 
+  const ComingSoon = () => (
+    <div className="min-h-screen bg-[#325368] flex items-center justify-center p-6 text-center">
+      <div className="max-w-md space-y-6">
+        <h2 className="font-['Roboto_Serif',serif] text-white text-2xl">This feature is coming soon. Right now, Plea focuses on helping you start your legal case safely.</h2>
+        <button 
+          onClick={navigateToHome}
+          className="px-8 py-3 bg-[#FF7034] rounded-[6px] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] hover:bg-[#ff8a4d] transition-colors"
+        >
+          Go Back to Home
+        </button>
+      </div>
+    </div>
+  );
+
   const handleStartFiling = () => {
     if (searchQuery.trim()) {
       setShowSearchError(false);
@@ -175,6 +189,12 @@ export default function App() {
   // Show page transition loading
   if (isPageTransitioning) {
     return <Loading />;
+  }
+
+  // Handle "Coming Soon" for unused pages
+  const isUnusedPage = ['how-it-works', 'case-types', 'why-us', 'join-lawyer'].includes(currentPage);
+  if (isUnusedPage) {
+    return <ComingSoon />;
   }
 
   // If on draft case file page, show that component
@@ -247,26 +267,11 @@ export default function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
-              <a href="#" className="font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:text-[#d0eae6] transition-colors">
-                How it Works
-              </a>
-              <a href="#" className="font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:text-[#d0eae6] transition-colors">
-                Case Types
-              </a>
-              <a href="#" className="font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:text-[#d0eae6] transition-colors">
-                Why Us
-              </a>
-              <a href="#" className="font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:text-[#d0eae6] transition-colors">
-                Join as a Lawyer
-              </a>
-              
-              <button className="flex items-center gap-2 px-[22px] py-[12px] border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:bg-white/10 transition-all hover:scale-105">
-                Get the App
-                <ArrowIcon />
-              </button>
-              
-              <button className="px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105">
-                Track your status
+              <button 
+                onClick={handleStartFiling}
+                className="px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+              >
+                Start Your Case
               </button>
             </nav>
 
@@ -289,24 +294,11 @@ export default function App() {
           {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 bg-[#264456] rounded-lg p-4 space-y-3 animate-[fadeInDown_0.3s_ease-out]">
-              <a href="#" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
-                How it Works
-              </a>
-              <a href="#" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
-                Case Types
-              </a>
-              <a href="#" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
-                Why Us
-              </a>
-              <a href="#" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
-                Join as a Lawyer
-              </a>
-              <button className="w-full flex items-center justify-center gap-2 px-[22px] py-[12px] border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:bg-white/10 transition-colors">
-                Get the App
-                <ArrowIcon />
-              </button>
-              <button className="w-full px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-colors">
-                Track your status
+              <button 
+                onClick={handleStartFiling}
+                className="w-full px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-colors"
+              >
+                Start Your Case
               </button>
             </div>
           )}
