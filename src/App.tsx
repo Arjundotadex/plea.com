@@ -319,13 +319,12 @@ export default function App() {
             <div className="space-y-5 lg:space-y-6 animate-[fadeInUp_0.8s_ease-out_0.2s_both]">
               {/* Hero Heading */}
               <h1 className="font-['Roboto_Serif',serif] text-white text-[32px] sm:text-[38px] lg:text-[42px] xl:text-[46px] leading-tight">
-                <span className="font-semibold">Start Your Case Easily — Done in Just </span>
-                <span className="font-light italic text-[#d0eae6]">10 Minutes</span>
+                Get Legal Help in Minutes — Without Confusion or Overcharging
               </h1>
 
               {/* Description */}
               <p className="font-['Roboto',sans-serif] font-medium text-white text-[16px] sm:text-[17px] lg:text-[18px] leading-relaxed max-w-[478px]">
-                Answer a few simple questions, upload your documents, and our lawyers prepare your case for you — fast, secure, and online.
+                Explain your situation, submit your details, and a verified human at Plea will review your case and guide your next steps.
               </p>
 
               {/* Search Bar */}
@@ -396,12 +395,12 @@ export default function App() {
                 onClick={handleStartFiling}
                 className="w-full sm:w-auto px-6 py-3 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-colors"
               >
-                Start filing your case
+                Start Your Case
               </button>
 
               {/* Info Text */}
               <p className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] sm:text-[16px]">
-                Takes less than 10 minutes — no legal knowledge needed.
+                No spam. No AI auto-filing. Real people helping you.
               </p>
             </div>
 
