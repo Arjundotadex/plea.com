@@ -54,7 +54,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
       
       {/* Progress Bar */}
       <div className="animate-[fadeIn_0.8s_ease-out_0.2s_both]">
-        <ProgressBar currentStep={8} />
+        <ProgressBar currentStep={6} />
       </div>
 
       {/* Main Content */}
@@ -71,44 +71,40 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
 
         {/* Subtitle */}
         <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[17px] md:text-[18px] text-center mb-8 lg:mb-10 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.6s_both] px-4">
-          Thank you for completing your case submission. Your assigned lawyer will begin reviewing your information shortly.
+          Thank you for completing your case submission. We will begin reviewing your information shortly.
         </p>
 
         {/* Case Summary Card */}
         <div className="bg-[#d0eae6] rounded-[7px] p-6 max-w-[589px] mx-auto mb-10 lg:mb-12 animate-[fadeInUp_0.8s_ease-out_0.8s_both] hover:shadow-xl transition-shadow">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
-            {/* Lawyer Image */}
-            <div className="w-[60px] h-[60px] shrink-0">
-              <img 
-                src={imgLawyer} 
-                alt="Jonas Smith" 
-                className="w-full h-full object-cover rounded-full"
-              />
+            {/* Plea Icon/Logo placeholder */}
+            <div className="w-[60px] h-[60px] shrink-0 bg-[#325368] rounded-full flex items-center justify-center text-white font-bold">
+              P
             </div>
 
-            {/* Lawyer Info */}
+            {/* Case Info */}
             <div className="flex-1 min-w-0">
               <p className="font-['Roboto_Serif',serif] font-medium text-[#264456] text-[18px] mb-2">
-                Jonas Smith
+                Case Submission
               </p>
               <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
-                Divorce Law
+                Under Review
               </p>
             </div>
 
-            {/* Price - Mobile: Below, Desktop: Right */}
+            {/* Status - Mobile: Below, Desktop: Right */}
             <div className="w-full sm:w-auto sm:text-right">
               <p className="font-['Roboto_Serif',serif] text-[#1d1c22] text-[18px] mb-2">
-                ₹5,000
+                Free Review
               </p>
               <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
-                Estimate within: 3 weeks
+                Response within: 24h
               </p>
             </div>
           </div>
 
           <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
-            Case urgency: <span className="font-medium text-[#325368]">Urgent</span>
+            Case status: <span className="font-medium text-[#325368]">Processing</span>
           </p>
         </div>
 
@@ -116,13 +112,13 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
         <div className="max-w-[589px] mx-auto mb-8 lg:mb-10 animate-[fadeInUp_0.8s_ease-out_1s_both]">
           <ol className="space-y-4 text-white font-['Roboto',sans-serif] text-[16px] sm:text-[18px] list-decimal list-inside px-4">
             <li className="leading-relaxed">
-              We're preparing your draft case file using AI. This usually takes 10-20 seconds.
+              We're preparing your draft case file. This usually takes 10-20 seconds.
             </li>
             <li className="leading-relaxed">
               You'll review the draft and confirm the details.
             </li>
             <li className="leading-relaxed">
-              Your lawyer will finalize and file your case officially.
+              Our team will review and guide your next steps.
             </li>
           </ol>
         </div>
@@ -140,7 +136,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
 
         {/* Security Notice */}
         <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[18px] text-center max-w-[589px] mx-auto animate-[fadeIn_0.8s_ease-out_1.4s_both] px-4">
-          Your information is secure, encrypted, and only shared with your assigned lawyer.
+          Your information is secure, encrypted, and only shared with the Plea review team.
         </p>
       </main>
     </div>

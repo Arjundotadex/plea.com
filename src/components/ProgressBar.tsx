@@ -6,13 +6,11 @@ type ProgressBarProps = {
 };
 
 const stepLabels = [
-  'Confirm your case type',
+  'Confirm Your Case Type',
   'Describe Your Issue',
   'Upload Documents',
   'Case Urgency',
-  'Account Setup',
-  'Lawyer Selection',
-  'Payment',
+  'Contact Details',
   'Confirmation'
 ];
 
@@ -31,7 +29,7 @@ function CheckIcon() {
   );
 }
 
-export default function ProgressBar({ currentStep, totalSteps = 8 }: ProgressBarProps) {
+export default function ProgressBar({ currentStep, totalSteps = 6 }: ProgressBarProps) {
   const [animatedProgress, setAnimatedProgress] = useState(0);
   
   useEffect(() => {
@@ -123,12 +121,12 @@ export default function ProgressBar({ currentStep, totalSteps = 8 }: ProgressBar
           {/* Animated Progress Line */}
           <div 
             className="absolute top-[11px] left-0 h-[9px] bg-[#FF7034] rounded-full transition-all duration-700 ease-out"
-            style={{ width: `${Math.min(animatedProgress * 0.5, 100)}%` }}
+            style={{ width: `${animatedProgress}%` }}
           />
           
-          {/* Visible Steps - Only show first 4 */}
+          {/* Visible Steps */}
           <div className="relative flex justify-between items-start">
-            {stepLabels.slice(0, 4).map((label, index) => {
+            {stepLabels.map((label, index) => {
               const stepNumber = index + 1;
               const isCompleted = stepNumber < currentStep;
               const isActive = stepNumber === currentStep;
