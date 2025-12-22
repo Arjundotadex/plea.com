@@ -50,7 +50,11 @@ type AccountSetupProps = {
 };
 
 export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupProps) {
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: ''
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
@@ -65,43 +69,41 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
       {/* Main Content */}
       <main className="w-full max-w-[1200px] mx-auto px-6 md:px-10 lg:px-16 py-8 lg:py-12">
         {/* Heading */}
-        <h1 className="font-['Roboto_Serif',serif] font-semibold text-white text-[32px] sm:text-[40px] lg:text-[48px] text-center mb-8 lg:mb-12 capitalize animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
-          Create Your Account
+        <h1 className="font-['Roboto_Serif',serif] font-semibold text-white text-[32px] sm:text-[40px] lg:text-[48px] text-center mb-8 lg:mb-12 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
+          Share Your Contact Details
         </h1>
 
-        {/* Phone Number Input */}
-        <div className="w-full max-w-[637px] mx-auto mb-6 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
+        {/* Contact Form */}
+        <div className="w-full max-w-[637px] mx-auto space-y-4 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
           <input
-            type="tel"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="Enter your phone number"
+            type="text"
+            value={formData.fullName}
+            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            placeholder="Full Name"
             className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
-        </div>
-
-        {/* Divider */}
-        <div className="flex items-center gap-4 max-w-[637px] mx-auto mb-6 animate-[fadeIn_0.8s_ease-out_0.8s_both]">
-          <div className="flex-1 h-[1px] bg-white/30" />
-          <p className="font-['Roboto',sans-serif] text-white text-[14px]">or continue with</p>
-          <div className="flex-1 h-[1px] bg-white/30" />
-        </div>
-
-        {/* Sign-In Buttons - Horizontal */}
-        <div className="flex flex-col sm:flex-row gap-4 max-w-[637px] mx-auto mb-12 lg:mb-16 animate-[fadeInUp_0.8s_ease-out_1s_both]">
-          <button className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-white rounded-[43px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto',sans-serif] font-medium text-[#1d1c22] text-[16px] hover:bg-gray-50 transition-all hover:scale-105">
-            <GoogleIcon />
-            Sign in with Google
-          </button>
-
-          <button className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-[#1d1c22] rounded-[43px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto',sans-serif] font-medium text-white text-[16px] hover:bg-[#2d2c32] transition-all hover:scale-105">
-            <AppleIcon />
-            Sign in with Apple
-          </button>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="Email"
+            className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
+          />
+          <input
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            placeholder="Phone Number"
+            className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
+          />
+          
+          <p className="font-['Roboto',sans-serif] text-white/80 text-[14px] text-center pt-2">
+            Your information is only used to contact you about your case. No spam. No data sharing.
+          </p>
         </div>
 
         {/* Continue Button */}
-        <div className="flex flex-col items-center gap-4 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
+        <div className="flex flex-col items-center gap-4 mt-12 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button
             onClick={onContinue}
             className="bg-[#FF7034] flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
@@ -109,10 +111,6 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
             Continue
             <ContinueArrow />
           </button>
-
-          <p className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] sm:text-[16px] text-center">
-            By continuing, you agree to our Terms & Privacy Policy
-          </p>
         </div>
       </main>
     </div>

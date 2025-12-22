@@ -78,7 +78,7 @@ function AnimatedCounter({ end, duration = 2000 }: { end: number; duration?: num
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<'home' | 'confirm-case' | 'describe-issue' | 'upload-documents' | 'case-urgency' | 'account-setup' | 'lawyer-selection' | 'payment' | 'confirmation' | 'draft-case-file'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'confirm-case' | 'describe-issue' | 'upload-documents' | 'case-urgency' | 'account-setup' | 'confirmation' | 'draft-case-file'>('home');
   const [searchQuery, setSearchQuery] = useState('');
   const [showSearchError, setShowSearchError] = useState(false);
   const [isInitialLoading, setIsInitialLoading] = useState(true);
@@ -162,14 +162,6 @@ export default function App() {
   };
 
   const handleAccountSetupContinue = () => {
-    navigateToPage('lawyer-selection');
-  };
-
-  const handleLawyerSelectionContinue = () => {
-    navigateToPage('payment');
-  };
-
-  const handlePaymentContinue = () => {
     navigateToPage('confirmation');
   };
 
@@ -192,7 +184,7 @@ export default function App() {
   }
 
   // Handle "Coming Soon" for unused pages
-  const isUnusedPage = ['how-it-works', 'case-types', 'why-us', 'join-lawyer'].includes(currentPage);
+  const isUnusedPage = ['how-it-works', 'case-types', 'why-us', 'join-lawyer', 'lawyer-selection', 'payment'].includes(currentPage);
   if (isUnusedPage) {
     return <ComingSoon />;
   }
