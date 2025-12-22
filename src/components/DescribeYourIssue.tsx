@@ -87,30 +87,28 @@ export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeY
           Describe Your Issue
         </h1>
 
-        {/* Text Area */}
+        {/* Text Area with Voice Recording */}
         <div className="relative w-full max-w-[637px] mx-auto mb-2 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
           <textarea
             value={issueDescription}
             onChange={(e) => setIssueDescription(e.target.value)}
             placeholder="Describe your issue… e.g. Husband refuses to sign divorce papers."
-            className="w-full h-[160px] p-6 bg-[#e5ebf0] rounded-[24px] font-['Roboto',sans-serif] text-[#325368] text-[16px] resize-none focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
+            className="w-full h-[140px] p-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] resize-none focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
-        </div>
-        
-        <div className="max-w-[600px] mx-auto mb-4 px-4 animate-[fadeInUp_0.8s_ease-out_0.7s_both]">
-          <p className="text-white/60 text-[13px] leading-relaxed text-center font-['Roboto',sans-serif]">
-            Please describe your case truthfully and clearly. Your information will guide real legal review. 
-            Submitting incomplete, inaccurate, or casual information may delay help or make it harder for us to assist you.
-          </p>
+          
+          {/* Voice Recording Button */}
+          <button className="absolute bottom-6 right-6 w-[44px] h-[44px] bg-[#FF7034] rounded-full flex items-center justify-center hover:bg-[#ff8a4d] transition-all hover:scale-110">
+            <MicrophoneIcon />
+          </button>
         </div>
         
         {!isDescriptionValid && issueDescription.trim().length > 0 && (
-          <p className="text-[#FF7034] text-[14px] text-center mb-4 font-medium animate-[fadeInUp_0.4s_ease-out]">Please provide a bit more detail (at least 15 characters)</p>
+          <p className="text-[#FF7034] text-[14px] text-center mb-4 font-medium">Please provide a bit more detail (at least 15 characters)</p>
         )}
 
         {/* Instruction Text */}
         <p className="font-['Roboto',sans-serif] font-medium text-white text-[16px] sm:text-[18px] text-center mb-12 lg:mb-16 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.8s_both]">
-          Briefly explain your legal issue.
+          Briefly explain your legal issue. You can also record the voice note.
         </p>
 
         {/* Continue Button */}
@@ -118,13 +116,14 @@ export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeY
           <button 
             onClick={onContinue}
             disabled={!isDescriptionValid}
-            className={`w-full max-w-[280px] h-[52px] flex items-center justify-center rounded-[30px] shadow-[0px_4px_10px_0px_rgba(255,112,52,0.3)] font-['Roboto_Serif',serif] font-bold text-white text-[18px] transition-all ${
+            className={`flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
               isDescriptionValid
-                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105 active:scale-95'
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
                 : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
             }`}
           >
-            Continue →
+            Continue
+            <ContinueArrow />
           </button>
 
           <p className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] sm:text-[16px] text-center">

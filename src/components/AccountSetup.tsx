@@ -117,13 +117,14 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
           <button
             onClick={onContinue}
             disabled={!isFormValid}
-            className={`w-full max-w-[280px] h-[52px] flex items-center justify-center rounded-[30px] shadow-[0px_4px_10px_0px_rgba(255,112,52,0.3)] font-['Roboto_Serif',serif] font-bold text-white text-[18px] transition-all ${
+            className={`flex items-center gap-3 px-8 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
               isFormValid
-                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105 active:scale-95'
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
                 : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
             }`}
           >
-            Continue →
+            Continue
+            <ContinueArrow />
           </button>
         </div>
       </main>

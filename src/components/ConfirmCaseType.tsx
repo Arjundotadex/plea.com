@@ -116,13 +116,16 @@ export default function ConfirmCaseType({ onContinue, onLogoClick }: ConfirmCase
           <button 
             onClick={onContinue}
             disabled={!selectedCase}
-            className={`w-full max-w-[280px] h-[52px] flex items-center justify-center rounded-[30px] shadow-[0px_4px_10px_0px_rgba(255,112,52,0.3)] font-['Roboto_Serif',serif] font-bold text-white text-[18px] transition-all ${
+            className={`flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
               selectedCase
-                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105 active:scale-95'
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
                 : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
             }`}
           >
-            Continue →
+            Continue
+            <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15">
+              <path d={svgPaths.p39cb0dc0} fill="white" />
+            </svg>
           </button>
 
           <p className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] sm:text-[16px] text-center">
