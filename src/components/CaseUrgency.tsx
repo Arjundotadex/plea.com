@@ -97,7 +97,7 @@ export default function CaseUrgency({ onContinue, onLogoClick }: CaseUrgencyProp
     { 
       key: 'immediate' as const, 
       title: 'Immediate', 
-      description: 'I need this within 48 hours (premium charge)' 
+      description: 'I need this within 48 hours' 
     },
     { 
       key: 'urgent' as const, 

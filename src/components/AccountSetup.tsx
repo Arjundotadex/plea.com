@@ -53,8 +53,11 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    phone: ''
+    phone: '',
+    location: ''
   });
+
+  const isFormValid = formData.fullName.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
@@ -79,26 +82,33 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
             type="text"
             value={formData.fullName}
             onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            placeholder="Full Name"
+            placeholder="Full Name (Required)"
             className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
           <input
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            placeholder="Email"
+            placeholder="Email (Required)"
             className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
           <input
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            placeholder="Phone Number"
+            placeholder="Phone Number (Optional)"
+            className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
+          />
+          <input
+            type="text"
+            value={formData.location}
+            onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+            placeholder="City / State (Optional)"
             className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
           
           <p className="font-['Roboto',sans-serif] text-white/80 text-[14px] text-center pt-2">
-            Your information is only used to contact you about your case. No spam. No data sharing.
+            Your details are only used to contact you about your case. We do not spam or sell your data.
           </p>
         </div>
 
@@ -106,7 +116,12 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
         <div className="flex flex-col items-center gap-4 mt-12 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button
             onClick={onContinue}
-            className="bg-[#FF7034] flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            disabled={!isFormValid}
+            className={`flex items-center gap-3 px-8 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
+              isFormValid
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
+                : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
+            }`}
           >
             Continue
             <ContinueArrow />

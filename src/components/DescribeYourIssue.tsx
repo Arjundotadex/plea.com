@@ -68,6 +68,7 @@ type DescribeYourIssueProps = {
 
 export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeYourIssueProps) {
   const [issueDescription, setIssueDescription] = useState('');
+  const isDescriptionValid = issueDescription.trim().length >= 15;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
@@ -87,12 +88,12 @@ export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeY
         </h1>
 
         {/* Text Area with Voice Recording */}
-        <div className="relative w-full max-w-[637px] mx-auto mb-6 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
+        <div className="relative w-full max-w-[637px] mx-auto mb-2 animate-[fadeInUp_0.8s_ease-out_0.6s_both]">
           <textarea
             value={issueDescription}
             onChange={(e) => setIssueDescription(e.target.value)}
             placeholder="Describe your issue… e.g. Husband refuses to sign divorce papers."
-            className="w-full h-[140px] p-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#6b6b6b] text-[16px] resize-none focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
+            className="w-full h-[140px] p-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] resize-none focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
           
           {/* Voice Recording Button */}
@@ -100,6 +101,10 @@ export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeY
             <MicrophoneIcon />
           </button>
         </div>
+        
+        {!isDescriptionValid && issueDescription.trim().length > 0 && (
+          <p className="text-[#FF7034] text-[14px] text-center mb-4 font-medium">Please provide a bit more detail (at least 15 characters)</p>
+        )}
 
         {/* Instruction Text */}
         <p className="font-['Roboto',sans-serif] font-medium text-white text-[16px] sm:text-[18px] text-center mb-12 lg:mb-16 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.8s_both]">
@@ -110,7 +115,12 @@ export default function DescribeYourIssue({ onContinue, onLogoClick }: DescribeY
         <div className="flex flex-col items-center gap-4 animate-[fadeInUp_0.8s_ease-out_1s_both]">
           <button 
             onClick={onContinue}
-            className="bg-[#FF7034] flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            disabled={!isDescriptionValid}
+            className={`flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
+              isDescriptionValid
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
+                : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
+            }`}
           >
             Continue
             <ContinueArrow />

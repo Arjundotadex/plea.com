@@ -123,14 +123,13 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
           </ul>
         </div>
 
-        {/* Generate Draft Button */}
+        {/* Back to Home Button */}
         <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button 
             onClick={onContinue}
-            className="flex items-center gap-2 px-8 py-4 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            className="h-[52px] flex items-center justify-center px-10 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-medium text-[#e5ebf0] text-[18px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
           >
             Back to Home
-            <ContinueArrow />
           </button>
         </div>
 

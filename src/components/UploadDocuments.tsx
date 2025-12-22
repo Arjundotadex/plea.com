@@ -128,7 +128,7 @@ export default function UploadDocuments({ onContinue, onLogoClick }: UploadDocum
 
         {/* Instruction Text */}
         <p className="font-['Roboto',sans-serif] font-medium text-white text-[16px] sm:text-[18px] text-center mb-12 lg:mb-16 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.8s_both]">
-          Upload relevant documents like agreements, notices, evidence, etc. Don't worry if you don't have all files now — you can submit them later.
+          You can also share documents later. This just helps us understand faster.
         </p>
 
         {/* Continue Button */}

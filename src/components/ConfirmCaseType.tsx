@@ -115,7 +115,12 @@ export default function ConfirmCaseType({ onContinue, onLogoClick }: ConfirmCase
         <div className="flex flex-col items-center gap-4 animate-[fadeInUp_0.8s_ease-out_1.8s_both]">
           <button 
             onClick={onContinue}
-            className="bg-[#FF7034] flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            disabled={!selectedCase}
+            className={`flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
+              selectedCase
+                ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
+                : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
+            }`}
           >
             Continue
             <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15">
