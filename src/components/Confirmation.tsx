@@ -127,7 +127,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
         <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button 
             onClick={onContinue}
-            className="h-[52px] flex items-center justify-center px-10 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-medium text-[#e5ebf0] text-[18px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            className="w-[220px] h-[52px] flex items-center justify-center p-[12px_18px] bg-[#FF7A3E] rounded-[8px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#ffffff] text-[18px] hover:bg-[#e66a35] transition-all hover:scale-105"
           >
             Back to Home
           </button>
