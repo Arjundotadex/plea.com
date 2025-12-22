@@ -71,7 +71,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
 
         {/* Subtitle */}
         <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[17px] md:text-[18px] text-center mb-8 lg:mb-10 max-w-2xl mx-auto animate-[fadeInUp_0.8s_ease-out_0.6s_both] px-4">
-          Thank you for completing your case submission. We will begin reviewing your information shortly.
+          Thank you for submitting your case. A verified human from Plea will review your information and reach out to you shortly.
         </p>
 
         {/* Case Summary Card */}
@@ -98,7 +98,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
                 Free Review
               </p>
               <p className="font-['Roboto',sans-serif] text-[#1d1c22] text-[16px]">
-                Response within: 24h
+                Response within: 24–48 hours
               </p>
             </div>
           </div>
@@ -110,33 +110,33 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
 
         {/* What Happens Next */}
         <div className="max-w-[589px] mx-auto mb-8 lg:mb-10 animate-[fadeInUp_0.8s_ease-out_1s_both]">
-          <ol className="space-y-4 text-white font-['Roboto',sans-serif] text-[16px] sm:text-[18px] list-decimal list-inside px-4">
-            <li className="leading-relaxed">
-              We're preparing your draft case file. This usually takes 10-20 seconds.
+          <ul className="space-y-4 text-white font-['Roboto',sans-serif] text-[16px] sm:text-[18px] px-4">
+            <li className="leading-relaxed flex gap-3">
+              <span>1️⃣</span> Our team reviews your case details.
             </li>
-            <li className="leading-relaxed">
-              You'll review the draft and confirm the details.
+            <li className="leading-relaxed flex gap-3">
+              <span>2️⃣</span> We may contact you if we need clarification or missing information.
             </li>
-            <li className="leading-relaxed">
-              Our team will review and guide your next steps.
+            <li className="leading-relaxed flex gap-3">
+              <span>3️⃣</span> We’ll discuss next steps and how we can help you.
             </li>
-          </ol>
+          </ul>
         </div>
 
         {/* Generate Draft Button */}
         <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button 
             onClick={onContinue}
-            className="flex items-center gap-2 px-6 py-4 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            className="flex items-center gap-2 px-8 py-4 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
           >
-            Generate My Draft Case File
+            Back to Home
             <ContinueArrow />
           </button>
         </div>
 
         {/* Security Notice */}
         <p className="font-['Roboto',sans-serif] text-white text-[16px] sm:text-[18px] text-center max-w-[589px] mx-auto animate-[fadeIn_0.8s_ease-out_1.4s_both] px-4">
-          Your information is secure, encrypted, and only shared with the Plea review team.
+          Your information is secure, encrypted, and only reviewed by the Plea team.
         </p>
       </main>
     </div>

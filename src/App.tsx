@@ -166,7 +166,7 @@ export default function App() {
   };
 
   const handleConfirmationContinue = () => {
-    setCurrentPage('draft-case-file');
+    navigateToHome();
   };
 
   const handleDraftCaseFileContinue = () => {
