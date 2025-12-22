@@ -47,6 +47,12 @@ type ConfirmationProps = {
 };
 
 export default function Confirmation({ onContinue, onLogoClick }: ConfirmationProps) {
+  const timelineItems = [
+    { number: '1', text: 'Our team reviews your case details.' },
+    { number: '2', text: 'We may contact you for clarification.' },
+    { number: '3', text: 'We’ll discuss next steps.' }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
       {/* Header/Navigation */}
@@ -111,15 +117,11 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
         {/* What Happens Next */}
         <div className="max-w-[589px] mx-auto mb-8 lg:mb-10 animate-[fadeInUp_0.8s_ease-out_1s_both]">
           <ul className="space-y-4 text-white font-['Roboto',sans-serif] text-[16px] sm:text-[18px] px-4">
-            <li className="leading-relaxed flex gap-3">
-              <span>1️⃣</span> Our team reviews your case details.
-            </li>
-            <li className="leading-relaxed flex gap-3">
-              <span>2️⃣</span> We may contact you if we need clarification or missing information.
-            </li>
-            <li className="leading-relaxed flex gap-3">
-              <span>3️⃣</span> We’ll discuss next steps and how we can help you.
-            </li>
+            {timelineItems.map((item) => (
+              <li key={item.number} className="leading-relaxed flex gap-3">
+                <span>{item.number}️⃣</span> {item.text}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -127,7 +129,7 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
         <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button 
             onClick={onContinue}
-            className="h-[52px] flex items-center justify-center px-10 bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-medium text-[#e5ebf0] text-[18px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            className="w-full max-w-[280px] h-[52px] flex items-center justify-center bg-[#FF7034] rounded-[30px] shadow-[0px_4px_10px_0px_rgba(255,112,52,0.3)] font-['Roboto_Serif',serif] font-medium text-white text-[18px] hover:bg-[#ff8a4d] transition-all hover:scale-105 active:scale-95"
           >
             Back to Home
           </button>

@@ -135,13 +135,10 @@ export default function UploadDocuments({ onContinue, onLogoClick }: UploadDocum
         <div className="flex flex-col items-center gap-4 animate-[fadeInUp_0.8s_ease-out_1s_both]">
           <button
             onClick={onContinue}
-            className="bg-[#FF7034] flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+            className="w-full max-w-[280px] h-[52px] flex items-center justify-center bg-[#FF7034] rounded-[30px] shadow-[0px_4px_10px_0px_rgba(255,112,52,0.3)] font-['Roboto_Serif',serif] font-bold text-white text-[18px] hover:bg-[#ff8a4d] transition-all hover:scale-105 active:scale-95"
             type="button"
           >
-            Continue
-            <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15" aria-hidden>
-              <path d={svgPaths.p39cb0dc0} fill="white" />
-            </svg>
+            Continue →
           </button>
 
           <p className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] sm:text-[16px] text-center">
