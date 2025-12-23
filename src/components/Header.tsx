@@ -15,10 +15,28 @@ function ArrowIcon() {
 
 type HeaderProps = {
   onLogoClick?: () => void;
+  hideNav?: boolean;
 };
 
-export default function Header({ onLogoClick }: HeaderProps) {
+export default function Header({ onLogoClick, hideNav = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // If hiding nav (intake pages), only show logo
+  if (hideNav) {
+    return (
+      <header className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-6 lg:py-8 animate-[fadeInDown_0.5s_ease-out]">
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          {/* Logo - Clickable */}
+          <button 
+            onClick={onLogoClick} 
+            className="w-[92px] h-[60px] shrink-0 hover:opacity-80 transition-opacity"
+          >
+            <img src={imgLogo} alt="Plea Logo" className="w-full h-full object-contain" />
+          </button>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-6 lg:py-8 animate-[fadeInDown_0.5s_ease-out]">

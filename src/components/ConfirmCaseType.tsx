@@ -62,7 +62,7 @@ export default function ConfirmCaseType({ onContinue, onLogoClick }: ConfirmCase
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#325368] to-[#1e3a4a] relative overflow-hidden">
       {/* Header/Navigation */}
-      <Header onLogoClick={onLogoClick} />
+      <Header onLogoClick={onLogoClick} hideNav={true} />
 
       {/* Progress Bar */}
       <div className="animate-[fadeIn_0.8s_ease-out_0.2s_both]">
