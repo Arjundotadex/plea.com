@@ -64,6 +64,10 @@ export default function Header({ onLogoClick, hideNav = false }: HeaderProps) {
             Join as a Lawyer
           </a>
           
+          <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:text-[#d0eae6] transition-colors">
+            support@plea.live
+          </a>
+          
           <button className="flex items-center gap-2 px-[22px] py-[12px] border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:bg-white/10 transition-all hover:scale-105">
             Get the App
             <ArrowIcon />
@@ -104,6 +108,9 @@ export default function Header({ onLogoClick, hideNav = false }: HeaderProps) {
           </a>
           <a href="#" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
             Join as a Lawyer
+          </a>
+          <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
+            support@plea.live
           </a>
           <button className="w-full flex items-center justify-center gap-2 px-[22px] py-[12px] border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[16px] hover:bg-white/10 transition-colors">
             Get the App
