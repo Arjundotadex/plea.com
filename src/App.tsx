@@ -255,7 +255,7 @@ export default function App() {
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-12 xl:gap-16">
+            <nav className="hidden lg:flex items-center gap-20 xl:gap-32">
               <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="px-4 py-2 border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:bg-white/10 transition-all hover:scale-105">
                 Need Help? support@plea.live
               </a>
