@@ -7,6 +7,7 @@ import Header from './Header';
 type ConfirmCaseTypeProps = {
   onContinue?: () => void;
   onLogoClick?: () => void;
+  initialSearchQuery?: string;
 };
 
 // Arrow icon for buttons
@@ -41,9 +42,9 @@ function CaseTypeButton({ text, selected = false, onClick }: CaseTypeButtonProps
   );
 }
 
-export default function ConfirmCaseType({ onContinue, onLogoClick }: ConfirmCaseTypeProps) {
-  const [selectedCase, setSelectedCase] = useState('Divorce');
-  const [searchQuery, setSearchQuery] = useState('Divorce');
+export default function ConfirmCaseType({ onContinue, onLogoClick, initialSearchQuery = 'Divorce' }: ConfirmCaseTypeProps) {
+  const [selectedCase, setSelectedCase] = useState(initialSearchQuery);
+  const [searchQuery, setSearchQuery] = useState(initialSearchQuery);
 
   const caseTypes = [
     'Divorce',

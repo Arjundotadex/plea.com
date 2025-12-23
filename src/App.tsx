@@ -231,7 +231,7 @@ export default function App() {
 
   // If on confirm case page, show that component
   if (currentPage === 'confirm-case') {
-    return <ConfirmCaseType onContinue={handleConfirmCaseTypeContinue} onLogoClick={navigateToHome} />;
+    return <ConfirmCaseType onContinue={handleConfirmCaseTypeContinue} onLogoClick={navigateToHome} initialSearchQuery={searchQuery} />;
   }
 
   // Otherwise show the hero page
