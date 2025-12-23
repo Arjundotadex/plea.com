@@ -249,7 +249,7 @@ export default function App() {
 
       {/* Content Container */}
       <div className="relative z-10">
-        {/* Header/Navigation */}
+        {/* Header/Navigation with Support Email for Home Page */}
         <header className="w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-6 lg:py-8 animate-[fadeInDown_0.5s_ease-out]">
           <div className="flex items-center justify-between flex-wrap gap-4">
             {/* Logo - Clickable */}
@@ -259,6 +259,10 @@ export default function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+              <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:text-[#d0eae6] transition-colors">
+                support@plea.live
+              </a>
+              
               <button 
                 onClick={handleStartFiling}
                 className="px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
@@ -286,6 +290,10 @@ export default function App() {
           {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 bg-[#264456] rounded-lg p-4 space-y-3 animate-[fadeInDown_0.3s_ease-out]">
+              <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
+                support@plea.live
+              </a>
+              
               <button 
                 onClick={handleStartFiling}
                 className="w-full px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-colors"
