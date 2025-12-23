@@ -117,14 +117,16 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
           <button
             onClick={onContinue}
             disabled={!isFormValid}
-            className={`flex items-center gap-3 px-8 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
+            className={`flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all ${
               isFormValid
                 ? 'bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105'
                 : 'bg-[#FF7034]/50 cursor-not-allowed opacity-70'
             }`}
           >
             Continue
-            <ContinueArrow />
+            <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15">
+              <path d={svgPaths.p39cb0dc0} fill="white" />
+            </svg>
           </button>
         </div>
       </main>
