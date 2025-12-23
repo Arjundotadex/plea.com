@@ -255,14 +255,14 @@ export default function App() {
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-20 xl:gap-32">
+            <nav className="hidden lg:flex items-center">
               <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="px-4 py-2 border border-white rounded-[6px] font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:bg-white/10 transition-all hover:scale-105">
                 Need Help? support@plea.live
               </a>
               
               <button 
                 onClick={handleStartFiling}
-                className="px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
+                className="ml-16 xl:ml-24 px-[22px] py-[12px] bg-[#FF7034] rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#e5ebf0] text-[16px] hover:bg-[#ff8a4d] transition-all hover:scale-105"
               >
                 Start Your Case
               </button>
