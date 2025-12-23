@@ -124,12 +124,15 @@ export default function Confirmation({ onContinue, onLogoClick }: ConfirmationPr
         </div>
 
         {/* Back to Home Button */}
-        <div className="flex justify-center mb-8 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
+        <div className="flex flex-col items-center gap-4 animate-[fadeInUp_0.8s_ease-out_1.2s_both]">
           <button 
             onClick={onContinue}
-            className="w-[220px] h-[52px] flex items-center justify-center p-[12px_18px] bg-[#FF7A3E] rounded-[8px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-semibold text-[#ffffff] text-[18px] hover:bg-[#e66a35] transition-all hover:scale-105"
+            className="flex items-center gap-3 px-6 py-4 rounded-[6px] shadow-[0px_2px_6.9px_0px_rgba(0,0,0,0.25)] font-['Roboto_Serif',serif] font-bold text-[#e5ebf0] text-[16px] transition-all bg-[#FF7034] hover:bg-[#ff8a4d] cursor-pointer hover:scale-105"
           >
             Back to Home
+            <svg className="w-[24px] h-[15px]" fill="none" viewBox="0 0 26 15">
+              <path d={svgPaths.p39cb0dc0} fill="white" />
+            </svg>
           </button>
         </div>
 

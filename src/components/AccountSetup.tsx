@@ -107,7 +107,7 @@ export default function AccountSetup({ onContinue, onLogoClick }: AccountSetupPr
             className="w-full h-[54px] px-6 bg-[#e5ebf0] rounded-[43px] font-['Roboto',sans-serif] text-[#325368] text-[16px] sm:text-[18px] focus:outline-none focus:ring-2 focus:ring-[#FF7034] transition-all placeholder:text-[#6b6b6b]"
           />
           
-          <p className="font-['Roboto',sans-serif] text-white/80 text-[14px] text-center pt-2">
+          <p className="font-['Roboto',sans-serif] text-white text-[14px] text-center pt-2">
             Your details are only used to contact you about your case. We do not spam or sell your data.
           </p>
         </div>
