@@ -259,9 +259,14 @@ export default function App() {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
-              <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:text-[#d0eae6] transition-colors">
-                support@plea.live
-              </a>
+              <div className="flex items-center gap-2">
+                <span className="font-['Roboto_Serif',serif] font-medium text-[#FF7034] text-[14px]">
+                  Facing any issues? -
+                </span>
+                <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="font-['Roboto_Serif',serif] font-medium text-white text-[14px] hover:text-[#d0eae6] transition-colors">
+                  support@plea.live
+                </a>
+              </div>
               
               <button 
                 onClick={handleStartFiling}
@@ -290,9 +295,14 @@ export default function App() {
           {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
             <div className="lg:hidden mt-4 bg-[#264456] rounded-lg p-4 space-y-3 animate-[fadeInDown_0.3s_ease-out]">
-              <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
-                support@plea.live
-              </a>
+              <div className="flex flex-col gap-2">
+                <span className="font-['Roboto_Serif',serif] font-medium text-[#FF7034] text-[14px] py-2 px-3">
+                  Facing any issues? -
+                </span>
+                <a href="mailto:support@plea.live" aria-label="Contact Support Email" className="block font-['Roboto_Serif',serif] font-medium text-white text-[16px] py-2 px-3 hover:bg-white/10 rounded transition-colors">
+                  support@plea.live
+                </a>
+              </div>
               
               <button 
                 onClick={handleStartFiling}
